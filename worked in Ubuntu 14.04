@@ -1,0 +1,29 @@
+Getting this to work on Ubuntu 14.04
+
+1 
+
+First I had a problem with MySQL installing this
+
+Make sure MySQL is entirely removed/purged
+
+    sudo apt-get remove --purge mysql-server mysql-client mysql-common mysql-server-5.5 mysql-client-5.5 mysql-server-core-5.5 mysql-client-core-5.5
+    sudo apt-get autoremove
+    sudo apt-get autoclean
+    sudo rm -rf /var/lib/mysql /etc/mysql
+    sudo deluser mysql
+
+    sudo apt-get dist-upgrade
+    sudo reboot
+    sudo apt-get install mysql-server-5.5
+    sudo apt-get install mysql-server
+
+
+2 Then I used these commands to install venv
+
+apt-cache policy python3.5-venv
+
+sudo apt-get install python3.6-venv
+sudo apt-get install python3.5-venv
+
+python3.5 -m venv vcardtools
+python3.6 -m venv vcardtools
